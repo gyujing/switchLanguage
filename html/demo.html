@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>入境情况统计</title>
+    <script type="text/javascript" src="../js/jquery-2.1.1.js"></script>
+    <script type="text/javascript" src="../js/jquery.i18n.js"></script>
+</head>
+<style>
+    input,select{
+        border-radius: 5px;
+        border:1px solid #c8c4c4;
+    }
+    a:focus, a:hover{
+        color: white;
+    }
+</style>
+<body style="height: 90%">
+<div>
+
+	
+    <li class="anchor" _t_nav="product">
+        <h2 > <a href="#" class="blueStreak"><span i18n="i18n.themselves">关于我们</span> <div class="movableLine"></div></a> </h2>
+     </li>   
+     <li class="anchor" _t_nav="wechat">
+         <h2> <a href="#" class="blueStreak"><span i18n="i18n.successful-case">成功案例</span><div class="movableLine"></div></a> </h2>
+     </li>
+     <li class="anchor" _t_nav="solution">
+         <h2> <a href="#" class="blueStreak"><span i18n="i18n.Intelligence-test">AI智能考场</span><div class="movableLine"></div></a> </h2>
+     </li>
+	  <select id="status" class="i_s_style1">
+		<option value="" i18n="i18n.all">全部</option>
+		<option value="1" i18n="i18n.checkresult.DSH">待审核</option>
+		<option value="2" i18n="i18n.checkresult.YSH">已审核</option>
+	</select>
+    <button onclick="languageSelect('cn')">cn</button>
+    <button onclick="languageSelect('en')">en</button>
+</div>
+</body>
+<script type="text/javascript">
+    var defaultLang = "en"
+    function languageSelect(defaultLang){
+        $("[i18n]").i18n({
+            defaultLang: defaultLang,
+            filePath: "../i18n/",
+            filePrefix: "i18n_",
+            fileSuffix: "",
+            forever: true,
+            callback: function(res) {}
+        });
+    }
+    languageSelect(defaultLang);
+
+    
+
+</script>
+</html>
